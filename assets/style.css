@@ -527,18 +527,32 @@ select { appearance: none; padding-right: 36px; cursor: pointer;
 .rf-control input[type="range"] { width: 100%; min-height: 0; padding: 0; border: 0; background: none; accent-color: var(--accent); cursor: pointer; }
 .rf-control input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; box-shadow: none; }
 .rf-control output { grid-column: 1 / -1; font-size: var(--fs-small); font-weight: 500; color: var(--text); }
-/* Footer: white, ruled off from the page */
-.site-footer { background: var(--bg); color: var(--text); padding-top: 48px; border-top: 1px solid var(--line); }
-.footer-grid { display: grid; gap: 32px; }
-@media (min-width: 768px) { .footer-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); } }
-.footer-brand p { margin: 10px 0 0; max-width: 56ch; color: var(--muted); font-size: var(--fs-small); }
-.footer-meta { font-size: var(--fs-label) !important; }
-.footer-title { margin: 0 0 10px; font-weight: 600; color: var(--text); }
-.footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.footer-col a { color: var(--muted); }
-.footer-col a:hover { color: var(--accent); }
-.footer-base { margin-top: 40px; padding-block: 16px; border-top: 1px solid var(--line); }
-.footer-base p { margin: 0; font-size: var(--fs-label); color: var(--muted); }
+/* Footer: ink ground (the brand tile's colour) closes the page; the brand mark's redline is the only accent. */
+.site-footer {
+  --on-ink: rgb(255 255 255 / 0.72); --on-ink-dim: rgb(255 255 255 / 0.55); --line-on-ink: rgb(255 255 255 / 0.12);
+  background: var(--text); color: var(--on-ink); padding-top: 64px; font-size: var(--fs-small);
+}
+.site-footer :focus-visible { outline-color: #fff; }
+.site-footer .brand { color: #fff; }
+.site-footer .brand-name small { color: var(--on-ink-dim); }
+.site-footer .mk-bg { fill: #2c353c; }  /* the tile stays visible on the ink ground */
+.footer-grid { display: grid; gap: 40px; }
+@media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .footer-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); column-gap: var(--pair-gap); } }
+.footer-brand p { margin: 16px 0 0; max-width: 44ch; line-height: 1.6; }
+.footer-notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; align-content: start; }
+.footer-notes li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; align-items: start; }
+.footer-notes .ico { width: 22px; height: 22px; color: var(--accent-on-ink); margin-top: 1px; }
+.footer-notes p { margin: 0; line-height: 1.6; }
+.footer-title { margin: 0 0 4px; font-size: var(--fs-label); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; }
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.footer-col a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--on-ink); text-decoration: none; transition: color var(--fast); }
+.footer-col a .ico { width: 18px; height: 18px; flex: none; color: var(--on-ink-dim); transition: color var(--fast); }
+.footer-col a:hover { color: #fff; }
+.footer-col a:hover span { text-decoration: underline; text-decoration-color: var(--accent-on-ink); text-underline-offset: 4px; }
+.footer-col a:hover .ico { color: var(--accent-on-ink); }
+.footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 56px; padding-block: 20px; border-top: 1px solid var(--line-on-ink); }
+.footer-base p { margin: 0; font-size: var(--fs-label); color: var(--on-ink-dim); }
 
 /* Table beside its figure (§4 slider, §7 sheet diagram): tops aligned; text follows full width. */
 .data-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--gap-group); align-items: start; }

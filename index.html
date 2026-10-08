@@ -123,7 +123,7 @@
       <p>Three things back the numbers:</p>
       <ul class="proof">
         <li><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M3 14.5h18M9 9v11"/></svg><p><b>Published table:</b> Every architectural ratio matches the architectural scale table published by Archtoolbox.</p></li>
-        <li><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6.5 5.5 8l3-3M4 12.5 5.5 14l3-3M4 18.5 5.5 20l3-3"/><path d="M11.5 6.5H20M11.5 12.5H20M11.5 18.5H20"/></svg><p><b>49 automated tests:</b> 25 of them check the math for conversions, length parsing and scale bars, and the rest check the page and shared links.</p></li>
+        <li><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6.5 5.5 8l3-3M4 12.5 5.5 14l3-3M4 18.5 5.5 20l3-3"/><path d="M11.5 6.5H20M11.5 12.5H20M11.5 18.5H20"/></svg><p><b>48 automated tests:</b> 25 of them check the math for conversions, length parsing and scale bars, and the rest check the page and shared links.</p></li>
         <li><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15"/></svg><p><b>Open code:</b> The formulas and their tests are public on <a href="https://github.com/architecturalscaleconvertertool/architecturalscaleconvertertool.github.io">GitHub</a>, so any result can be checked against the code.</p></li>
       </ul>
     </div>
@@ -142,21 +142,21 @@
           <summary><span class="step-n">1</span><b>Choose a mode and scale.</b></summary>
           <div class="step-body">
             <p>Pick one of six modes: Drawing to real, Real to drawing, Rescale, Find the scale, AutoCAD or Print. Then pick a scale from the list, or type one that is not listed, such as 1:75 or 1″ = 25′.</p>
-            <figure class="step-fig"><img src="/assets/img/howto-1.webp" width="1200" height="720" alt="Converter with the Drawing to real tab selected and 1/4″ = 1′-0″ chosen in the drawing scale list" loading="lazy" decoding="async"></figure>
+            <figure class="step-fig"><img src="/assets/img/architectural-scale-converter-choose-mode-and-scale.webp" width="1200" height="720" alt="Converter with the Drawing to real tab selected and 1/4″ = 1′-0″ chosen in the drawing scale list" loading="lazy" decoding="async"></figure>
           </div>
         </details></li>
         <li><details name="howto">
           <summary><span class="step-n">2</span><b>Type the measurement.</b></summary>
           <div class="step-body">
             <p>The field reads feet and inches in the forms people write them, such as 12′-6 3/4″, 12′ 6.75″ or 150.75″. Metric lengths work too, such as 3.81 m or 3,810 mm.</p>
-            <figure class="step-fig"><img src="/assets/img/howto-2.webp" width="1200" height="720" alt="Real size field holding 12′-6 3/4″ in feet, under a 1/4″ = 1′-0″ drawing scale" loading="lazy" decoding="async"></figure>
+            <figure class="step-fig"><img src="/assets/img/architectural-scale-converter-type-measurement.webp" width="1200" height="720" alt="Real size field holding 12′-6 3/4″ in feet, under a 1/4″ = 1′-0″ drawing scale" loading="lazy" decoding="async"></figure>
           </div>
         </details></li>
         <li><details name="howto">
           <summary><span class="step-n">3</span><b>Read, copy or share the result.</b></summary>
           <div class="step-body">
             <p>The main answer shows in large type with the other units under it. Each value has its own copy button, a share link keeps every input, and the scale bar downloads as an SVG.</p>
-            <figure class="step-fig"><img src="/assets/img/howto-3.webp" width="1200" height="720" alt="Result panel showing 10′-0″ in large type, with feet, inches, millimeters and meters below, each with a Copy button" loading="lazy" decoding="async"></figure>
+            <figure class="step-fig"><img src="/assets/img/architectural-scale-converter-read-result.webp" width="1200" height="720" alt="Result panel showing 10′-0″ in large type, with feet, inches, millimeters and meters below, each with a Copy button" loading="lazy" decoding="async"></figure>
           </div>
         </details></li>
       </ol>
@@ -425,7 +425,7 @@
     <div class="sec-body">
     <div class="pills trade-tabs pills-grid-3" data-pills>
       <div class="pill-list" role="tablist" aria-label="Trades" hidden><button type="button" role="tab" id="trade-architects-tab" aria-controls="trade-architects" aria-selected="true"><svg class="ico tab-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.6"/><path d="M11.3 6 6 20.5M12.7 6 18 20.5M8.3 14.5h7.4"/></svg><span>Architects</span></button><button type="button" role="tab" id="trade-contractors-tab" aria-controls="trade-contractors" aria-selected="false" tabindex="-1"><svg class="ico tab-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15v-2a7 7 0 0 1 14 0v2"/><path d="M10 6.4V11M14 6.4V11"/><path d="M2.5 15.5h19v1.5a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1z"/></svg><span>Contractors</span></button><button type="button" role="tab" id="trade-interior-designers-tab" aria-controls="trade-interior-designers" aria-selected="false" tabindex="-1"><svg class="ico tab-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 11V7.5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2V11"/><path d="M4 11a2 2 0 0 1 2 2v2h12v-2a2 2 0 1 1 4 0v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-4a2 2 0 0 1 2-2z"/><path d="M5 18v2M19 18v2"/></svg><span>Interior<span class="tab-more"> designers</span></span></button><button type="button" role="tab" id="trade-civil-engineers-tab" aria-controls="trade-civil-engineers" aria-selected="false" tabindex="-1"><svg class="ico tab-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 17h20M7 6v14M17 6v14"/><path d="M2 12c2.5 0 4-3 5-6M7 6c2 5.5 8 5.5 10 0M17 6c1 3 2.5 6 5 6"/></svg><span>Civil<span class="tab-more"> engineers</span></span></button><button type="button" role="tab" id="trade-bim-teams-tab" aria-controls="trade-bim-teams" aria-selected="false" tabindex="-1"><svg class="ico tab-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8 20 7.4v9.2L12 21.2 4 16.6V7.4z"/><path d="M4 7.4 12 12l8-4.6M12 12v9.2"/></svg><span>BIM<span class="tab-more"> teams</span></span></button><button type="button" role="tab" id="trade-students-tab" aria-controls="trade-students" aria-selected="false" tabindex="-1"><svg class="ico tab-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9.5 12 5l10 4.5L12 14z"/><path d="M6 11.3V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.7M22 9.5v5"/></svg><span>Students</span></button></div>
-      <div class="pill-panel" id="trade-architects" role="tabpanel" aria-labelledby="trade-architects-tab"><div class="trade">
+      <div class="pill-panel" id="trade-architects" role="tabpanel" aria-labelledby="trade-architects-tab"><article class="trade">
           <div class="trade-text">
             <h3 id="scale-conversions-for-architects">Scale Conversions for Architects</h3>
             <p>Architects enlarge parts of a plan into details and need the exact copy percentage: taking a wall section from 1/4″ = 1′-0″ to 1 1/2″ = 1′-0″ is a 600% enlargement. Any other percentage leaves the detail sheet off its stated scale.</p>
@@ -438,8 +438,8 @@
             <dl class="ex-rows"><div><dt>Size factor</dt><dd>× 6</dd></div><div><dt>Direction</dt><dd>Enlarge</dd></div></dl>
             <figcaption class="sr-only">The converter's result for the example above.</figcaption>
           </figure>
-        </div></div>
-      <div class="pill-panel" id="trade-contractors" role="tabpanel" aria-labelledby="trade-contractors-tab"><div class="trade">
+        </article></div>
+      <div class="pill-panel" id="trade-contractors" role="tabpanel" aria-labelledby="trade-contractors-tab"><article class="trade">
           <div class="trade-text">
             <h3 id="scale-conversions-for-contractors-and-estimators">Scale Conversions for Contractors and Estimators</h3>
             <p>Contractors and estimators confirm a print is to scale before a takeoff: a 30′-0″ dimension that measures 3 11/16″ points to 1/8″ = 1′-0″ printed at 98.3%, so a 101.7% correction brings every length back. Left uncorrected, a 100 ft run would measure as about 98 ft.</p>
@@ -452,8 +452,8 @@
             <dl class="ex-rows"><div><dt>Measured ratio</dt><dd>1:97.63</dd></div><div><dt>Print size vs. true scale</dt><dd>98.33%</dd></div><div><dt>Reprint at</dt><dd>101.69%</dd></div></dl>
             <figcaption class="sr-only">The converter's result for the example above.</figcaption>
           </figure>
-        </div></div>
-      <div class="pill-panel" id="trade-interior-designers" role="tabpanel" aria-labelledby="trade-interior-designers-tab"><div class="trade">
+        </article></div>
+      <div class="pill-panel" id="trade-interior-designers" role="tabpanel" aria-labelledby="trade-interior-designers-tab"><article class="trade">
           <div class="trade-text">
             <h3 id="scale-conversions-for-interior-designers">Scale Conversions for Interior Designers</h3>
             <p>Interior designers draw furniture from catalog sizes: a 7′-6″ sofa is 3 3/4″ long at 1/2″ = 1′-0″, twice its 1 7/8″ length at 1/4″ = 1′-0″. Converting the real size gives the length to draw without dividing by hand.</p>
@@ -466,8 +466,8 @@
             <dl class="ex-rows"><div><dt>Inches</dt><dd>3.75 in</dd></div><div><dt>Millimeters</dt><dd>95.3 mm</dd></div></dl>
             <figcaption class="sr-only">The converter's result for the example above.</figcaption>
           </figure>
-        </div></div>
-      <div class="pill-panel" id="trade-civil-engineers" role="tabpanel" aria-labelledby="trade-civil-engineers-tab"><div class="trade">
+        </article></div>
+      <div class="pill-panel" id="trade-civil-engineers" role="tabpanel" aria-labelledby="trade-civil-engineers-tab"><article class="trade">
           <div class="trade-text">
             <h3 id="scale-conversions-for-civil-and-landscape-engineers">Scale Conversions for Civil and Landscape Engineers</h3>
             <p>Civil and landscape engineers work in decimal feet for grades and site layout: 2 7/8″ at 1″ = 30′ reads 86.25 ft, which the converter also shows as 86′-3″.</p>
@@ -480,8 +480,8 @@
             <dl class="ex-rows"><div><dt>Feet</dt><dd>86.25 ft</dd></div><div><dt>Meters</dt><dd>26.289 m</dd></div></dl>
             <figcaption class="sr-only">The converter's result for the example above.</figcaption>
           </figure>
-        </div></div>
-      <div class="pill-panel" id="trade-bim-teams" role="tabpanel" aria-labelledby="trade-bim-teams-tab"><div class="trade">
+        </article></div>
+      <div class="pill-panel" id="trade-bim-teams" role="tabpanel" aria-labelledby="trade-bim-teams-tab"><article class="trade">
           <div class="trade-text">
             <h3 id="scale-conversions-for-bim-and-scan-to-bim-teams">Scale Conversions for BIM and Scan-to-BIM Teams</h3>
             <p>BIM and scan-to-BIM teams model at full size, so a scale only enters through the view: each view carries a scale that sizes annotation and sets its default detail level, while the model elements follow their BIM level of development. When those views go onto AutoCAD sheets, the AutoCAD mode gives the matching viewport and DIMSCALE values, such as 1/32xp and 32 at 3/8″ = 1′-0″.</p>
@@ -494,8 +494,8 @@
             <dl class="ex-rows"><div><dt>Viewport scale (ZOOM)</dt><dd>1/32xp</dd></div><div><dt>DIMSCALE</dt><dd>32</dd></div></dl>
             <figcaption class="sr-only">The converter's result for the example above.</figcaption>
           </figure>
-        </div></div>
-      <div class="pill-panel" id="trade-students" role="tabpanel" aria-labelledby="trade-students-tab"><div class="trade">
+        </article></div>
+      <div class="pill-panel" id="trade-students" role="tabpanel" aria-labelledby="trade-students-tab"><article class="trade">
           <div class="trade-text">
             <h3 id="scale-conversions-for-architecture-students">Scale Conversions for Architecture Students</h3>
             <p>Architecture students print boards on whatever paper the plotter takes: an 18 × 24 sheet at 1/4″ = 1′-0″ printed on 12 × 18 paper lands at 66.7%, a 1:72 ratio that matches no standard scale.</p>
@@ -508,7 +508,7 @@
             <dl class="ex-rows"><div><dt>Scale on the new sheet</dt><dd>1:72</dd></div><div><dt>Closest standard scale</dt><dd>3/16″ = 1′-0″ (not exact)</dd></div></dl>
             <figcaption class="sr-only">The converter's result for the example above.</figcaption>
           </figure>
-        </div></div>
+        </article></div>
     </div>
     </div>
   </div>
@@ -616,18 +616,24 @@
 </section>
 </main>
 <footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div class="footer-brand">
-      <a class="brand" href="/"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="mk-bg" width="64" height="64" rx="12"/><rect class="mk-line" x="10" y="24" width="44" height="16" fill="none" stroke-width="2.5"/><rect class="mk-fg" x="10" y="24" width="11" height="8"/><rect class="mk-fg" x="21" y="32" width="11" height="8"/><rect class="mk-red" x="32" y="24" width="22" height="8"/><rect class="mk-fg" x="32" y="32" width="22" height="8"/></svg><span class="brand-name"><small>Architectural</small> <b>Scale Converter</b></span></a>
-      <p>Architectural Scale Converter is a free, open-source tool that converts architectural, engineering and metric drawing scales in the browser.</p>
-      <p>No sign-up, no cookies, no tracking. Drawings stay in your browser.</p>
-      <p>Results are for reference. Check critical dimensions against the dimensions written on the drawing.</p>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="mk-bg" width="64" height="64" rx="12"/><rect class="mk-line" x="10" y="24" width="44" height="16" fill="none" stroke-width="2.5"/><rect class="mk-fg" x="10" y="24" width="11" height="8"/><rect class="mk-fg" x="21" y="32" width="11" height="8"/><rect class="mk-red" x="32" y="24" width="22" height="8"/><rect class="mk-fg" x="32" y="32" width="22" height="8"/></svg><span class="brand-name"><small>Architectural</small> <b>Scale Converter</b></span></a>
+        <p>Architectural Scale Converter is a free, open-source tool that converts architectural, engineering and metric drawing scales in the browser.</p>
+      </div>
+      <ul class="footer-notes">
+        <li><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="10.5" width="14" height="10" rx="1.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/><path d="M12 14.5V17"/></svg><p>No sign-up, no cookies, no tracking. Drawings stay in your browser.</p></li>
+        <li><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17 17 3l4 4L7 21z"/><path d="M6 14l2 2M8.6 11.4l1.2 1.2M11 9l2 2M13.6 6.4l1.2 1.2"/></svg><p>Results are for reference. Check critical dimensions against the dimensions written on the drawing.</p></li>
+      </ul>
+      
+      <div class="footer-col"><p class="footer-title">Project</p><ul><li><a href="https://github.com/architecturalscaleconvertertool/architecturalscaleconvertertool.github.io"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15"/></svg><span>Source code (MIT)</span></a></li><li><a href="https://github.com/architecturalscaleconvertertool/architecturalscaleconvertertool.github.io/issues"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.4"/></svg><span>Report a problem</span></a></li></ul></div>
+    </div>
+    <div class="footer-base">
+      <p>© 2026 Architectural Scale Converter · MIT License</p>
       <p class="footer-meta">Last updated <time datetime="2026-10-08">October 2026</time></p>
     </div>
-    
-    <div class="footer-col"><p class="footer-title">Project</p><ul><li><a href="https://github.com/architecturalscaleconvertertool/architecturalscaleconvertertool.github.io">Source code (MIT)</a></li><li><a href="https://github.com/architecturalscaleconvertertool/architecturalscaleconvertertool.github.io/issues">Report a problem</a></li></ul></div>
   </div>
-  <div class="wrap footer-base"><p>© 2026 Architectural Scale Converter · MIT License</p></div>
 </footer>
 </body>
 </html>
