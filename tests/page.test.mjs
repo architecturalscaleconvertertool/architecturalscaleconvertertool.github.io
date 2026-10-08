@@ -16,6 +16,8 @@ const ORIGIN = 'https://architecturalscaleconvertertool.github.io';
 const OUTBOUND = [
   // §5.3 source citation (AutoCAD help).
   'https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-LT/files/GUID-66E7DB72-B2A7-4166-9970-9E19CC06F739.htm',
+  'https://www.usfa.fema.gov/downloads/pdf/nfa/engineer-architect-scales.pdf',
+  'https://openlab.citytech.cuny.edu/andersonnicolecmce1110fall2021/files/2021/03/06_slides_scale-REMOTE.pdf',
 ];
 const REPO = 'https://github.com/architecturalscaleconvertertool/architecturalscaleconvertertool.github.io';
 
@@ -121,8 +123,8 @@ test('FAQ: 4 tabs, each one column with the anchor H2 open first + H3 questions,
   const faq = schemas[0]['@graph'].find((s) => s['@type'] === 'FAQPage');
   const sec = html.slice(html.indexOf('<section class="sec sec-band faq-sec"'), html.indexOf('<section class="sec cta-sec"'));
   const plain = (t) => t.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim();
-  const leads = [...sec.matchAll(/<details name="faq-[a-z-]+" open class="faq-anchor"><summary><h2 id="[^"]+">([^<]+)<\/h2><\/summary><div class="faq-a">\s*<p>([^<]+)<\/p>/g)].map((m) => [m[1], m[2]]);
-  const qs = [...sec.matchAll(/<summary><h3 id="[^"]+">([^<]+)<\/h3><\/summary><div class="faq-a">\s*<p>([^<]+)<\/p>/g)].map((m) => [m[1], m[2]]);
+  const leads = [...sec.matchAll(/<details name="faq-[a-z-]+" open class="faq-anchor"><summary><h2 id="[^"]+">([^<]+)<\/h2><\/summary><div class="faq-a">\s*<p>([\s\S]*?)<\/p>/g)].map((m) => [m[1], m[2]]);
+  const qs = [...sec.matchAll(/<summary><h3 id="[^"]+">([^<]+)<\/h3><\/summary><div class="faq-a">\s*<p>([\s\S]*?)<\/p>/g)].map((m) => [m[1], m[2]]);
   assert.equal(leads.length, 4, 'anchor H2');
   assert.equal(qs.length, 16, 'H3 questions');
   assert.equal(faq.mainEntity.length, 20);
@@ -163,4 +165,9 @@ test('§5 H3 blocks sit in three tabs, every panel ships visible with its H3', (
     assert.ok(start > -1, `panel ${panel} ships without hidden`);
     assert.ok(group.indexOf(`<h3 id="${h3}">`, start) > start, `H3 ${h3} inside ${panel}`);
   }
+});
+
+test('<strong> marks at most 5 key facts; other bold text uses <b>', () => {
+  const n = (html.match(/<strong>/g) ?? []).length;
+  assert.ok(n >= 1 && n <= 5, `strong count ${n}`);
 });
