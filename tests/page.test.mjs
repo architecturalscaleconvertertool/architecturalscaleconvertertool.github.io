@@ -198,3 +198,8 @@ test('feedback email is shown as text, in the footer and on the 404 page', () =>
     assert.ok(page.includes('architecturalscaleconvertertoo<wbr>@gmail.com'), 'address visible as text');
   }
 });
+
+test('Search Console verification meta stays in the home page head', () => {
+  const headHtml = html.slice(0, html.indexOf('</head>'));
+  assert.ok(headHtml.includes('<meta name="google-site-verification" content="ytuIqkSI_jHG8FxRSMyL-ykCzTX9wo5r1-VuqxOckNc">'));
+});
