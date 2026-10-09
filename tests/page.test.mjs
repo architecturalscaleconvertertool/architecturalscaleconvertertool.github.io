@@ -190,3 +190,11 @@ test('footer feedback links open the repo issue forms that exist', () => {
     assert.ok(html.includes(`href="${REPO}/issues/new?template=${name}"`), `footer link ${name}`);
   }
 });
+
+test('feedback email is shown as text, in the footer and on the 404 page', () => {
+  const nf = readFileSync(join(root, '404.html'), 'utf8');
+  for (const page of [html, nf]) {
+    assert.ok(page.includes('href="mailto:architecturalscaleconvertertoo@gmail.com"'));
+    assert.ok(page.includes('architecturalscaleconvertertoo<wbr>@gmail.com'), 'address visible as text');
+  }
+});
