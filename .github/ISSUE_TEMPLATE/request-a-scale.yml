@@ -1,0 +1,16 @@
+name: Request a scale
+description: Ask for a drawing scale or sheet size that the converter does not list yet.
+title: "Scale request: "
+body:
+  - type: input
+    id: scale
+    attributes:
+      label: Scale or sheet size
+      placeholder: 3/32" = 1'-0", 1:25 or 30 x 42
+    validations:
+      required: true
+  - type: textarea
+    id: use
+    attributes:
+      label: Where is it used? (optional)
+      description: The trade, the type of drawing or the country helps decide how to add it.

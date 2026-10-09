@@ -1,0 +1,51 @@
+name: Wrong result
+description: A conversion shows a number that does not match the drawing or your own calculation.
+title: "Wrong result: "
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for checking the numbers. The fields below let anyone repeat the conversion.
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - Drawing to real
+        - Real to drawing
+        - Rescale
+        - Find the scale
+        - AutoCAD
+        - Print
+    validations:
+      required: true
+  - type: input
+    id: scale
+    attributes:
+      label: Scale
+      placeholder: 1/4" = 1'-0" or 1:50
+    validations:
+      required: true
+  - type: input
+    id: input
+    attributes:
+      label: What you typed
+      placeholder: 3 1/4"
+    validations:
+      required: true
+  - type: input
+    id: shown
+    attributes:
+      label: Result shown
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Result you expected, and how you worked it out
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Page address (optional)
+      description: Copy the address bar after the conversion. It holds your inputs, so the result can be opened again.

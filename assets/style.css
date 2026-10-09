@@ -618,3 +618,16 @@ select { appearance: none; padding-right: 36px; cursor: pointer;
 .cta-paths li .mode-btn { flex: none; }
 .cta-bar { margin: 36px auto 0; max-width: 420px; color: var(--text); }
 .cta-bar svg { display: block; width: 100%; height: auto; }
+
+/* ---------- 404 page ---------- */
+.nf h1 { font-size: var(--fs-h1); line-height: 1.06; font-weight: 600; letter-spacing: -0.02em; margin: 0 auto; max-width: 18ch; }
+.nf .sec-head h1 + .sec-lead { margin-top: 20px; }
+.nf-cta { margin: 28px 0 0; }
+.nf-label { margin: 0 0 12px; font-size: var(--fs-label); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-align: center; }
+.nf-modes { list-style: none; margin: 0 auto; padding: 0; max-width: 960px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; }
+.nf-modes a { display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--surface); color: var(--text); text-decoration: none; }
+.nf-modes a:hover, .nf-modes a:focus-visible { border-color: var(--accent); }
+.nf-mode { display: flex; align-items: center; gap: 6px; font-weight: 600; }
+.nf-mode .ico { width: 16px; height: 16px; color: var(--accent); }
+.nf-hint { font-size: var(--fs-small); color: var(--muted); line-height: 1.45; }
+.nf-note { margin: 32px 0 0; text-align: center; color: var(--muted); font-size: var(--fs-small); }

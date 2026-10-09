@@ -171,3 +171,22 @@ test('<strong> marks at most 5 key facts; other bold text uses <b>', () => {
   const n = (html.match(/<strong>/g) ?? []).length;
   assert.ok(n >= 1 && n <= 5, `strong count ${n}`);
 });
+
+test('404 page: noindex, no canonical or schema, one H1, links back to the converter and every mode', async () => {
+  const nf = readFileSync(join(root, '404.html'), 'utf8');
+  const { MODE_SLUGS } = await import('../assets/state.js');
+  assert.ok(nf.includes('<meta name="robots" content="noindex">'));
+  assert.doesNotMatch(nf, /rel="canonical"|og:url|application\/ld\+json/);
+  assert.equal((nf.match(/<h1[ >]/g) ?? []).length, 1);
+  assert.ok(nf.includes('href="/#converter"'));
+  for (const slug of Object.keys(MODE_SLUGS)) assert.ok(nf.includes(`href="/#${slug}"`), `mode link ${slug}`);
+  for (const [, url] of nf.matchAll(/(?:href|src)="(\/[^"#]*)"/g)) assert.ok(url === '/' || existsSync(join(root, url)), `404 asset ${url}`);
+  assert.ok(!readFileSync(join(root, 'sitemap.xml'), 'utf8').includes('404'), '404 stays out of the sitemap');
+});
+
+test('footer feedback links open the repo issue forms that exist', () => {
+  for (const name of ['wrong-result.yml', 'request-a-scale.yml']) {
+    assert.ok(existsSync(join(root, '.github/ISSUE_TEMPLATE', name)), `template ${name}`);
+    assert.ok(html.includes(`href="${REPO}/issues/new?template=${name}"`), `footer link ${name}`);
+  }
+});
