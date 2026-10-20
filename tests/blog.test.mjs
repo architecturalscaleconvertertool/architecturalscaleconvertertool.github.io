@@ -86,3 +86,39 @@ test('no writer labels or empty paragraphs left in the copy', () => {
     assert.doesNotMatch(html, /<p>\s*<\/p>/, `${path} empty paragraph`);
   }
 });
+
+test('footer carries no guide links; the header links to /blog/', () => {
+  for (const { path, html } of pages) {
+    const foot = html.slice(html.indexOf('<footer class="site-footer"'));
+    assert.ok(!foot.includes('href="/blog/'), `${path} footer links a guide`);
+    assert.ok(html.includes('<nav class="site-nav"') && html.includes('href="/blog/"'), `${path} header Guides link`);
+  }
+});
+
+test('guides load only site.js, never the converter bundle', () => {
+  for (const { path, html } of pages) {
+    assert.ok(html.includes('src="/assets/site.js"'), `${path} site.js`);
+    assert.ok(!html.includes('src="/assets/app.js"'), `${path} loads app.js`);
+  }
+});
+
+test('every guide has a 1200 × 675 cover used as og:image and on /blog/', () => {
+  for (const s of slugs) {
+    const cover = `/assets/img/blog/${s}-cover.webp`;
+    assert.ok(existsSync(join(root, cover)), `missing ${cover}`);
+    const html = readFileSync(join(root, 'blog', s, 'index.html'), 'utf8');
+    assert.ok(html.includes(`<meta property="og:image" content="${ORIGIN}${cover}">`), `${s} og:image`);
+    assert.ok(pages[0].html.includes(`src="${cover}"`), `/blog/ card image ${s}`);
+  }
+});
+
+test('contents list ships with the guide and points at real headings; Read next closes the guide', () => {
+  for (const { path, html } of posts) {
+    if (!html.includes('data-toc')) continue;
+    const nav = html.match(/<nav class="toc"[\s\S]*?<\/nav>/)[0];
+    const ids = [...nav.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]);
+    assert.ok(ids.length >= 3, `${path} toc entries`);
+    for (const id of ids) assert.ok(html.includes(`<h2 id="${id}">`), `${path} toc ${id}`);
+    assert.ok(html.indexOf('class="read-next"') > html.indexOf('class="post-body"'), `${path} Read next after the body`);
+  }
+});
