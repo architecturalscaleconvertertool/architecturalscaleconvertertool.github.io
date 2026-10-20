@@ -750,3 +750,5 @@ select { appearance: none; padding-right: 36px; cursor: pointer;
 .card-col .card-text { display: flex; flex-direction: column; flex: 1; }
 .card-col .card-more { margin-top: auto; padding-top: 14px; }
 .card-col .card-desc { margin-bottom: 0; }
+/* Phones: logo + Guides fill the header; the logo already opens the converter and every guide has its own CTA box. */
+@media (max-width: 599px) { .header-cta { display: none; } }
