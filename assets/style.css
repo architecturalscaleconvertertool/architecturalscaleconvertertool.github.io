@@ -631,3 +631,52 @@ select { appearance: none; padding-right: 36px; cursor: pointer;
 .nf-mode .ico { width: 16px; height: 16px; color: var(--accent); }
 .nf-hint { font-size: var(--fs-small); color: var(--muted); line-height: 1.45; }
 .nf-note { margin: 32px 0 0; text-align: center; color: var(--muted); font-size: var(--fs-small); }
+
+/* ---------- Guides (/blog/) ---------- */
+/* One reading column (--measure); tables and figures may run wider than the text, up to 880px. */
+.post-wrap { max-width: calc(880px + 2 * var(--gutter)); padding-block: 24px var(--sec-pad); }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 4px 0; list-style: none; margin: 0 0 28px; padding: 0; font-size: var(--fs-label); color: var(--muted); }
+.crumbs li:not(:last-child)::after { content: "/"; margin-inline: 8px; color: var(--line-strong); }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--accent); text-decoration: underline; }
+.post-head { margin-bottom: 32px; }
+.post-head h1 { font-size: clamp(30px, 2vw + 18px, 44px); line-height: 1.12; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 14px; max-width: 30ch; }
+.post-meta { margin: 0; font-size: var(--fs-small); color: var(--muted); }
+.post-lead { margin: 0; font-size: var(--fs-lead); line-height: 1.55; color: var(--muted); max-width: var(--measure); }
+.post-body > * { max-width: var(--measure); }
+.post-body > .table-wrap { max-width: none; }
+.post-body p, .post-body ul, .post-body ol { margin: 0 0 var(--gap-tight); line-height: 1.7; }
+.post-body ul, .post-body ol { padding-left: 1.3em; }
+.post-body li { margin-bottom: 6px; }
+.post-body li > ul, .post-body li > ol { margin: 6px 0 0; }
+.post-body h2 { font-size: clamp(24px, 1vw + 18px, 30px); line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; margin: 48px 0 14px; scroll-margin-top: 16px; }
+.post-body h3 { font-size: 20px; line-height: 1.3; font-weight: 600; margin: 32px 0 10px; scroll-margin-top: 16px; }
+.post-body h4 { font-size: var(--fs-body); font-weight: 600; margin: 24px 0 8px; }
+.post-body .table-wrap { margin: 20px 0 28px; }
+.post-table { font-size: var(--fs-small); }
+.post-table th { white-space: normal; vertical-align: bottom; }
+.post-table td { vertical-align: top; line-height: 1.5; min-width: 9em; }
+.post-table td:first-child { min-width: 7em; font-weight: 500; }
+.post-fig { margin: 24px 0 32px; }
+.post-fig img { display: block; width: 100%; height: auto; border-radius: var(--r-panel); background: var(--sunk); }
+.toc { margin: 8px 0 8px; padding: 18px 20px; background: var(--sunk); border-radius: var(--r-panel); }
+.toc-title { margin: 0 0 8px; font-size: var(--fs-label); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.toc ol { margin: 0; padding-left: 1.3em; font-size: var(--fs-small); }
+.toc li { margin-bottom: 4px; }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.post-cta { display: flex; gap: 14px; align-items: flex-start; margin: 8px 0 28px; padding: 16px 18px; border: 1px solid var(--line-strong); border-left: 3px solid var(--accent); border-radius: var(--r); background: var(--surface); }
+.post-cta .ico { width: 24px; height: 24px; flex: none; color: var(--blue); margin-top: 2px; }
+.post-cta p { margin: 0; font-size: var(--fs-small); line-height: 1.6; }
+.post-cta a { font-weight: 600; }
+.related { margin-top: 56px; padding-top: 20px; border-top: var(--rule); max-width: var(--measure); }
+.related-title, .guide-group h2 { margin: 0 0 12px; font-size: var(--fs-label); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.related ul, .guide-list { list-style: none; margin: 0; padding: 0; }
+.related li, .guide-list li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.related a, .guide-list a { font-weight: 600; }
+.related span { display: block; margin-top: 2px; font-size: var(--fs-small); color: var(--muted); line-height: 1.5; }
+.guide-group { margin-top: 40px; max-width: var(--measure); }
+.guide-group h2 { padding-bottom: 10px; border-bottom: var(--rule); margin-bottom: 0; }
+.guide-list a { font-size: 18px; }
+.guide-list p { margin: 4px 0 0; font-size: var(--fs-small); color: var(--muted); line-height: 1.5; }
+.nw { white-space: nowrap; }

@@ -95,7 +95,9 @@ test('repository files for GitHub Pages are present', () => {
   }
   const sitemap = readFileSync(join(root, 'sitemap.xml'), 'utf8');
   assert.ok(sitemap.includes(`<loc>${ORIGIN}/</loc>`));
-  assert.equal((sitemap.match(/<loc>/g) ?? []).length, 1, 'sitemap lists only the home page');
+  const guides = readdirSync(join(root, 'blog')).filter((d) => statSync(join(root, 'blog', d)).isDirectory());
+  assert.equal((sitemap.match(/<loc>/g) ?? []).length, 2 + guides.length, 'sitemap lists the home page, /blog/ and every guide');
+  for (const g of guides) assert.ok(sitemap.includes(`<loc>${ORIGIN}/blog/${g}/</loc>`), `sitemap misses ${g}`);
   assert.ok(!existsSync(join(root, 'about')), 'no /about/ page');
   assert.ok(readFileSync(join(root, 'robots.txt'), 'utf8').includes(`Sitemap: ${ORIGIN}/sitemap.xml`));
 });
