@@ -97,8 +97,8 @@ test('footer carries no guide links; the header links to /blog/', () => {
 
 test('guides load only site.js, never the converter bundle', () => {
   for (const { path, html } of pages) {
-    assert.ok(html.includes('src="/assets/site.js"'), `${path} site.js`);
-    assert.ok(!html.includes('src="/assets/app.js"'), `${path} loads app.js`);
+    assert.match(html, /src="\/assets\/site\.js\?v=[0-9a-f]{10}"/, `${path} site.js`);
+    assert.ok(!html.includes('src="/assets/app.js'), `${path} loads app.js`);
   }
 });
 

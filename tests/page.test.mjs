@@ -182,7 +182,7 @@ test('404 page: noindex, no canonical or schema, one H1, links back to the conve
   assert.equal((nf.match(/<h1[ >]/g) ?? []).length, 1);
   assert.ok(nf.includes('href="/#converter"'));
   for (const slug of Object.keys(MODE_SLUGS)) assert.ok(nf.includes(`href="/#${slug}"`), `mode link ${slug}`);
-  for (const [, url] of nf.matchAll(/(?:href|src)="(\/[^"#]*)"/g)) assert.ok(url === '/' || existsSync(join(root, url)), `404 asset ${url}`);
+  for (const [, url] of nf.matchAll(/(?:href|src)="(\/[^"#]*)"/g)) assert.ok(url === '/' || existsSync(join(root, url.split("?")[0])), `404 asset ${url}`);
   assert.ok(!readFileSync(join(root, 'sitemap.xml'), 'utf8').includes('404'), '404 stays out of the sitemap');
 });
 
