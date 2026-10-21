@@ -18,7 +18,8 @@ function update() {
   // Hide only after the header has scrolled past, and only on a real move (touch jitter stays put).
   if (Math.abs(y - lastY) > 6) {
     const hide = y > lastY && y > (header?.offsetHeight ?? 60) * 2 && !header?.contains(document.activeElement);
-    root.classList.toggle('header-hidden', hide && !details?.open);
+    // On phones an open contents list keeps the header; on desktop the list is always open, so it does not count.
+    root.classList.toggle('header-hidden', hide && !(details?.open && !wide.matches));
     lastY = y;
   }
   if (y < 8) root.classList.remove('header-hidden');
