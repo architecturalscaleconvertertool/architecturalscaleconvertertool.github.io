@@ -688,8 +688,9 @@ select { appearance: none; padding-right: 36px; cursor: pointer;
 @media (min-width: 1100px) {
   .post-layout { display: grid; grid-template-columns: minmax(0, 760px) 280px; justify-content: space-between; column-gap: 56px; align-items: start; }
   .post-layout.no-toc { grid-template-columns: minmax(0, 760px); }
-  .post-aside { grid-column: 2; grid-row: 1; margin: 0; padding-top: 48px; }
-  .post-body { grid-column: 1; grid-row: 1; }
+  /* The contents column starts beside the title, so the head and intro leave no empty band on the right. */
+  .post-head, .post-intro, .post-body { grid-column: 1; }
+  .post-aside { grid-column: 2; grid-row: 1 / span 3; margin: 0; padding-top: 6px; }
   .toc details { border: 0; box-shadow: none; background: none; backdrop-filter: none; border-left: 1px solid var(--line); border-radius: 0; }
   .toc summary { pointer-events: none; min-height: 0; padding: 0 0 8px 18px; }
   .toc summary::after, .toc-current { display: none; }
