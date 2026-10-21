@@ -18,6 +18,9 @@ const OUTBOUND = [
   'https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-LT/files/GUID-66E7DB72-B2A7-4166-9970-9E19CC06F739.htm',
   'https://www.usfa.fema.gov/downloads/pdf/nfa/engineer-architect-scales.pdf',
   'https://openlab.citytech.cuny.edu/andersonnicolecmce1110fall2021/files/2021/03/06_slides_scale-REMOTE.pdf',
+  // Links to a sister tool and a related guide.
+  'https://point-cloud-density-calculator.pages.dev/',
+  'https://dev.to/asbuiltnotes/best-scan-to-bim-services-in-us-6-providers-and-a-buyers-guide-45f8',
 ];
 const REPO = 'https://github.com/architecturalscaleconvertertool/architecturalscaleconvertertool.github.io';
 
