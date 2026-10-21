@@ -87,11 +87,14 @@ test('no writer labels or empty paragraphs left in the copy', () => {
   }
 });
 
-test('footer carries no guide links; the header links to /blog/', () => {
-  for (const { path, html } of pages) {
+test('header: brand + converter button; footer: one Guides link to /blog/, no list of guides', () => {
+  const home = readFileSync(join(root, 'index.html'), 'utf8');
+  for (const { path, html } of [...pages, { path: '/', html: home }]) {
+    const head = html.slice(html.indexOf('<header class="site-header"'), html.indexOf('</header>'));
+    assert.match(head, /class="btn btn-ink header-cta" href="\/?#converter"/, `${path} header CTA`);
+    assert.ok(!head.includes('/blog/'), `${path} header still links Guides`);
     const foot = html.slice(html.indexOf('<footer class="site-footer"'));
-    assert.ok(!foot.includes('href="/blog/'), `${path} footer links a guide`);
-    assert.ok(html.includes('<nav class="site-nav"') && html.includes('href="/blog/"'), `${path} header Guides link`);
+    assert.equal((foot.match(/href="\/blog\/[^"]*"/g) ?? []).join(), 'href="/blog/"', `${path} footer guide links`);
   }
 });
 
